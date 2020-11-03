@@ -1,0 +1,73 @@
+body {
+    background-image:url('https://thumbs.gfycat.com/CraftyCircularBeauceron-small.gif');
+    background-size:100%;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    height:100%;
+    width:100%;
+}
+.grid{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: rgb(207, 87, 50);
+    padding: 10px 50px 50px 50px;
+    border-radius: 50px;
+    border: 2px solid #920808;
+    box-shadow: 10px 15px 5px bisque;
+}
+.grid h1 {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: burlywood;
+    font-size: 60px;
+    text-align: center;
+    color: #242324;
+    padding: 2px 0px;
+    border-radius: 50px;
+}
+
+.grid #question {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    color: #5a6772
+
+}
+.buttons{
+    margin-top: 35px;
+}
+#btn0, #btn1, #btn2, #btn3{  
+    background-color: antiquewhite;
+    border-radius: 50px;
+    margin: 40px 10px 0px;
+    padding: 10px 10px;
+    font-size: 25px;
+    width: 250px;
+    color: #ffffff;
+    border: 1px solid #343434;
+
+}
+#btn0:hover, #btn1:hover, #btn2:hover, #btn3:hover{
+    cursor: pointer;
+    background-color: #920808;
+}
+#btn0:focus, #btn1:focus, #btn2:focus, #btn3:focus{
+    outline: 0;
+}
+#progress {
+    color: #4CAF50;
+    font-size: 18px;
+}
+
+#timerProgress {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    background-color: #ddd;
+}
+#timerBar {
+    background-color: #4CAF50;
+    width: 10px;
+    height: 30px;
+    position: absolute;
+}
+
