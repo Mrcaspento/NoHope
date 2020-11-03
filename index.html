@@ -9,14 +9,17 @@
 </head>
 
 <body>
-   
+
     <!--Move this button -->
-   
-    <div class="grid"><!--below is the the grid for the questions-->
-        <div id = "quiz">
+
+    <div class="grid">
+        <!--below is the the grid for the questions-->
+        <div id="quiz">
             <h1>Yes its a quiz</h1>
             <hr style="margin-top: 30px;">
+
             <p id="question"></p>
+
             <div class="buttons">
                 <button id="btn0"><span id="choice0"></span></button>
                 <button id="btn1"><span id="choice1"></span></button>
@@ -25,18 +28,15 @@
             </div>
             <hr style="margin-top: 40px;">
             <footer>
-                <p id ="progress">question of x of y</p>
+                <p id="progress">question of x of y</p>
             </footer>
         </div>
-        <button id="startBtn" onclick ="move()">Click Me To Start Quiz!</button>
-
-        <div id="timerProgress">
-            <div id="timerBar"></div>
-        </div>
-        <p id="timer"></p>
-    
+        
     </div>
-    <script src="script.js"></script>
+    <script src="quiz_controller.js"></script>
+    <script src="question.js"></script>
+    <script src="app.js"></script>
+    
 </body>
 
 </html>
