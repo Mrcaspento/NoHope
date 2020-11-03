@@ -5,31 +5,25 @@ function question(text, choices, answer){ // storing these parameters into the v
   this.answer = answer;
 
 }
-
-//var quiz =
-//    [1, "placeholder question", "placeholder answer"],
- //   [2, "placeholder question", "placeholder answer"],
-  //  [3, "placeholder question", "placeholder answer"],
-//    [4, "placeholder question", "placeholder answer"],
-//    [5, "placeholder question", "placeholder answer"],
-//    [6, "placeholder question", "placeholder answer"],
-//    [7, "placeholder question", "placeholder answer"],
- //   [8, "placeholder question", "placeholder answer"],
- //   [9, "placeholder question", "placeholder answer"],
- //   [10, "placeholder question","placeholder answer"],
-//];
-
-var answer;
-var response;
-
-answer = prompt(quiz[0][1]);
-response = answer.toLocaleLowerCase;
-function quizlet(){
-for (var i = 0; i < quiz.length; i += 1) { // the for loop is running though each question in the array
-    if (response === quiz[0][2]) {
-        document.write(<h2>You got question $(quiz[0][0]) correct!</h2>);
-    } else {
-        document.write(<h2>You got question $(quiz[0][0]) wrong!</h2>);
-    }
+//made the  
+question.prototype.correctAnswer = function(choice){
+  return choice === this.answer;
 }
+
+function Quiz(questions) {
+  this.score = 0;
+  this.questions = questions;
+  this.questionIndex = 0;
+}
+Quiz.prototype.getQuestion = function(){
+  return this.questions[this.questionIndex];
+}
+Quiz.prototype.isDone = function(){
+  return this.questions.length === this .questionIndex;
+}
+Quiz.prototype.guess = function(answer){
+  this.questionIndex++;
+  if(this.questionIndex().correctAnswer(answer)) {
+      this.score++;
+  }
 }
