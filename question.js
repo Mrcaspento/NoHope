@@ -1,9 +1,9 @@
-function Question(text, choices, answer){
+function question(text, choices, answer){
   this.text =text;
   this.choices = choices;
   this.answer = answer;
 }
 
-Question.prototype.correctAnswer = function (choice) {
+question.prototype.correctAnswer = function(choice) {
   return choice === this.answer;
 }
