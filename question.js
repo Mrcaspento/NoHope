@@ -1,17 +1,23 @@
 // world variables
+function question(text, choices, answer){ // storing these parameters into the variables below
+  this.text= text;
+  this.choice = choices;
+  this.answer = answer;
 
-var quiz = [
-    [1, "placeholder question", "placeholder answer"],
-    [2, "placeholder question", "placeholder answer"],
-    [3, "placeholder question", "placeholder answer"],
-    [4, "placeholder question", "placeholder answer"],
-    [5, "placeholder question", "placeholder answer"],
-    [6, "placeholder question", "placeholder answer"],
-    [7, "placeholder question", "placeholder answer"],
-    [8, "placeholder question", "placeholder answer"],
-    [9, "placeholder question", "placeholder answer"],
-    [10, "placeholder question","placeholder answer"],
-];
+}
+
+//var quiz =
+//    [1, "placeholder question", "placeholder answer"],
+ //   [2, "placeholder question", "placeholder answer"],
+  //  [3, "placeholder question", "placeholder answer"],
+//    [4, "placeholder question", "placeholder answer"],
+//    [5, "placeholder question", "placeholder answer"],
+//    [6, "placeholder question", "placeholder answer"],
+//    [7, "placeholder question", "placeholder answer"],
+ //   [8, "placeholder question", "placeholder answer"],
+ //   [9, "placeholder question", "placeholder answer"],
+ //   [10, "placeholder question","placeholder answer"],
+//];
 
 var answer;
 var response;
