@@ -35,6 +35,12 @@ body {
 #buttons{
     margin-top: 50px;
 }
+#startbtn{
+
+}
+#timerNumber{
+    color: white;
+}
 #btn0, #btn1, #btn2, #btn3{  
     background-color: antiquewhite;
     border-radius: 50px;

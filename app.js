@@ -55,7 +55,7 @@ var timerEl = (function(document){
       var c = 60;
  
       function myClock() {
-        document.getElementById("demo").innerHTML = --c;
+        document.getElementById("timerNumber").innerHTML = --c;
         if (c == 0) {
           clearInterval(myTimer);
           alert("Reached zero");
