@@ -1,14 +1,13 @@
 ///GLOBAL VARS
 var timerEl = document.getElementById('timer');//timer element
 var questionEl = document.querySelector("question"); //question element
-
+var contentEl = document.getElementById('content');
 
 function populate() {
     if (quiz.isDone()) {
         showScores();
     } else {
         //show question
-       
      questionEl.innerHTML = quiz.questionIndex().text;
 
     }//show choices
