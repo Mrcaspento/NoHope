@@ -3,6 +3,12 @@ var timerEl = document.getElementById('timer');//timer element
 var questionEl = document.querySelector("question"); //question element
 var contentEl = document.getElementById('content');
 
+
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------
 function populate() {
     if (quiz.isDone()) {
         showScores();
@@ -26,6 +32,7 @@ function guess(id, guess) {
         populate();
     }
 }
+//----------------------------------------------------------------------------------------------------------------
 function showProgress() {
     var currentQuestionNumber = quiz.questionIndex + 1;
  questionEl = document.getElementById("progress");
@@ -38,23 +45,31 @@ function showScores() {
    // element = document.getElementById(quiz);
     //element.innerHTML = gameOverHtml;
 }
+//-----------------------------------------------------------------------------------------------------------------------------
+//The Timer and quiz start functions!!!
 
-function startQuiz() {
-    var secondsLeft = 5;
-    timerEl.textContent = secondsLeft + "seconds until we begin.";
-  
-    delay = parseInt(prompt('How many milliseconds per word?'));
-    // Create the countdown timer.
-    var intervalId = setInterval(function () {
-      secondsLeft--;
-      timerEl.textContent = secondsLeft + "seconds until we begin.";
-      
-      if (secondsLeft === 0) {
-        clearInterval(intervalId);
-        speedRead();
+var timerEl = (function(document){
+    var myTimer;
+    function start() {
+      myTimer = setInterval(myClock, 1000);
+      var c = 60;
+ 
+      function myClock() {
+        document.getElementById("demo").innerHTML = --c;
+        if (c == 0) {
+          clearInterval(myTimer);
+          alert("Reached zero");
+        }
       }
-    }, 1000);
-  }
+    }
+    function end() {
+        clearInterval(myTimer)
+    }
+    return {start:start, end:end};
+  })(document);
+    
+
+//--------------------------------------------------------------------------------------------------------------------------------
 
 var questions = [
     new question("placeholder dquestion?", ["placeholder answer", "placeholder answer", "placeholder answer", "placeholder answer"], "correctanswer"),
