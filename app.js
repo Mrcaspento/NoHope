@@ -48,17 +48,7 @@ function showScores() {
 //-----------------------------------------------------------------------------------------------------------------------------
 //The Timer and quiz start functions!!!
 
-var quizStart
-var container = document.querySelector(".contaienr");
-
-
-
-
-
-
-
-
-
+function startQuiz
 var timerEl = (function(document){
     var myTimer;
     function start() {

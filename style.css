@@ -63,4 +63,30 @@ body {
     color: #4CAF50;
     font-size: 18px;
 }
+/* the hidden quiz*/
+.grid #quiz{
+    width: 550px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: rgb(207, 87, 50);
+    padding: 10px 50px 50px 50px;
+    border-radius: 50px;
+    border: 2px solid #920808;
+    box-shadow: 10px 15px 5px bisque;
+}
+.grid h1 {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: burlywood;
+    font-size: 60px;
+    text-align: center;
+    color: #242324;
+    padding: 2px 0px;
+    border-radius: 50px;
+}
 
+.grid #question {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    color: #5a6772
+
+}
