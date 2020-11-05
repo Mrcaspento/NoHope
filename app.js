@@ -1,7 +1,6 @@
 ///GLOBAL VARS
 var timerEl = document.getElementById('timer');//timer element
 var contentEl = document.getElementById('content');
-var button = document.getElementById('choices');
 
 //--------------------------------------------------------------------------------------------------------------
 //
@@ -107,9 +106,9 @@ var questions = [
 
 
 
+    document.body.qustionContainer = displayQuestion;
 
-
-    function populateQuestionContainer() {
+    function correctOrNot() {
         currentQuestionIndex++;
         displayQuestion();
         //determine correct/incorrect
@@ -122,10 +121,12 @@ var questions = [
     function displayQuestion(){
         var currentQuestion = questions[currentQuestionIndex];
         currentQuestion.answerIndex;
-        element.insertAdjacentHTML(populateQuestionContainer,"currentQuestion");
+         const questions = document.appendChild("buttons")
 
+
+        /// below is to display the choices
         for( var i = 0; i <currentQuestion.choices.length; i++){
-            var choices = document.createElement("span") 
+            var choices = document.appendChild("span") 
             choices.setAttribute("id", i);
         }
         //display the question
@@ -133,7 +134,7 @@ var questions = [
         
     }
 
- //choices.addEventListener("click",answerChosen);
+ choices.addEventListener("click",answerChosen);
 
 
 //-------------------------------------
