@@ -48,6 +48,17 @@ function showScores() {
 //-----------------------------------------------------------------------------------------------------------------------------
 //The Timer and quiz start functions!!!
 
+var quizStart
+var container = document.querySelector(".contaienr");
+
+
+
+
+
+
+
+
+
 var timerEl = (function(document){
     var myTimer;
     function start() {
@@ -68,20 +79,74 @@ var timerEl = (function(document){
     return {start:start, end:end};
   })(document);
     
-
 //--------------------------------------------------------------------------------------------------------------------------------
 
 var questions = [
-    new question("placeholder dquestion?", ["placeholder answer", "placeholder answer", "placeholder answer", "placeholder answer"], "correctanswer"),
-    new question("placeholder question?", ["placeholder answer", "placeholder answer", "placeholder answer", "placeholder answer"], "correctanswer"),
-    new question("placeholder question?", ["placeholder answer", "placeholder answer", "placeholder answer", "placeholder answer"], "correctanswer"),
-    new question("placeholder question?", ["placeholder answer", "placeholder answer", "placeholder answer", "placeholder answer"], "correctanswer"),
-    new question("placeholder question?", ["placeholder answer", "placeholder answer", "placeholder answer", "placeholder answer"], "correctanswer"),
-    new question("placeholder question?", ["placeholder answer", "placeholder answer", "placeholder answer", "placeholder answer"], "correctanswer"),
-    new question("placeholder question?", ["placeholder answer", "placeholder answer", "placeholder answer", "placeholder answer"], "correctanswer"),
-    new question("placeholder question?", ["placeholder answer", "placeholder answer", "placeholder answer", "placeholder answer"], "correctanswer"),
-    new question("placeholder question?", ["placeholder answer", "placeholder answer", "placeholder answer", "placeholder answer"], "correctanswer"),
-];
+    {q: "placeholder question?",
+    choices: [
+        "Placeholder answer",
+        "Placeholder answer",
+        "Placeholder answer",
+        "Placeholder answer"
+    ],
+    answerIndex: 0 /// the correct answer
+},{q: "placeholder question?",
+choices: [
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer"
+],
+answerIndex: 0 /// the correct answer
+},{q: "placeholder question?",
+choices: [
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer"
+],
+answerIndex: 0 /// the correct answer
+},{q: "placeholder question?",
+choices: [
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer"
+],
+answerIndex: 0 /// the correct answer
+},{q: "placeholder question?",
+choices: [
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer"
+],
+answerIndex: 0 /// the correct answer
+},{q: "placeholder question?",
+choices: [
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer"
+],
+answerIndex: 0 /// the correct answer
+},{q: "placeholder question?",
+choices: [
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer"
+],
+answerIndex: 0 /// the correct answer
+},{q: "placeholder question?",
+choices: [
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer",
+    "Placeholder answer"
+],
+answerIndex: 0 /// the correct answer
+},]
 var quiz = new quiz(questions);
 //function that operates the questions
 populate();
