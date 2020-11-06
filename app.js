@@ -5,8 +5,8 @@ const startButton = document.getElementById('startBtn')
 startButton.addEventListener('click', startGame,)
 const quizContainer = document.getElementById('quiz-Container')
 const answerBtnEL = document.getElementById('choiceBtn')
-let randomQuestions, currentQuestionIndex;
-const questionEl = document.getElementById('question')
+const randomQuestions, currentQuestionIndex; /// to shuffle the questions
+const questionEl = document.getElementById('question')//gets the question out of the array of questions
 
 
 
@@ -18,53 +18,26 @@ const questionEl = document.getElementById('question')
 function startGame(){
     startButton.classList.add('hide');
     quizContainer.classList.remove("hide");
-
-    currentQuestionIndex = 0;
     randomQuestions = questions.sort(() => Math.random() - .5);
-    
+    currentQuestionIndex = 0;
+    startTimer();
     displayQuestion();
 }
+function startTimer();
+
+
+
 function displayNextQuestion(){
     showQuestion(randomQuestions[currentQuestionIndex])
 }
 function displayQuestion(question) {
-    questionEl.innerText = question.question
+    questionEl.innerText = questions.question
 }
 
-//function displayNextQuestion(question){
-//    var currentQuestion = randomQuestions[currentQuestionIndex];
-//    currentQuestion.answer;
-//     const questions = document.appendChild("buttons")
-//
-//
-//    /// below is to display the choices
-//    for( var i = 0; i <currentQuestion.choices.length; i++){
-//        var choices = document.appendChild("span") 
-//        choices.setAttribute("id", i);
-//    }
-////var timerEl = (function (document) {
-////    var myTimer;
-//    function startClock() {
-//        myTimer = setInterval(myClock, 1000);
-//        var c = 60;
-//
-//        function myClock() {
-//            document.getElementById("timerNumber").innerHTML = --c;
-//            if (c == 0) {
-//                clearInterval(myTimer);
-//                alert("Reached zero");
-//            }
-//        }
-//    }
-//    function end() {
-//        clearInterval(myTimer)
-//    }
-//    return { start: start, end: end };
-//})(document);
 
 //--------------------------------------------------------------------------------------------------------------------------------
 
-const questionS = [
+const questions = [
     {
         question: "placeholder question?",
         choices: [
@@ -138,55 +111,6 @@ const questionS = [
         ],
         answer: 0 /// the correct answer
     },]
-
-
+v
 
      
-
-  //  function correctOrNot() {
-  //      currentQuestionIndex++;
-  //      displayQuestion();
-  //      //determine correct/incorrect
-  //  }
-
-
-   
-    
-
-    
-        //display the question
-        //display the choices
-        
-    
-
- //choices.addEventListener("click",answerChosen);
-
-
-//-------------------------------------
-
-//question.prototype.correctAnswer = function (choice) {
-//    return choice === this.answer;
-//}
-////--------------------------------------
-//function quiz(questions) {
-//    this.score = 0;
-//    this.questions = questions;
-//    this.questionIndex = 0;
-//}
-//question.prototype.correctAnswer = function (choice) {
-//    return choice === this.answer;
-//}
-//quiz.prototype.getQuestion = function () {
-//    return this.questions[this.questionIndex];
-//}
-//quiz.prototype.isDone = function () {
-//    return this.questions.length === this.questionIndex;
-//}
-//quiz.prototype.guess = function (answer) {
-//    this.questionIndex++;
-//
-//    if (this.getQuestionIndex().correctAnswer(answer)) {
-//        this.score++;
-//    }
-//}
-//
