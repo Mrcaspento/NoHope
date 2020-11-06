@@ -1,11 +1,11 @@
 ///GLOBAL VARS
-var timerEl = document.getElementById('timer');//timer element
-var contentEl = document.getElementById('content');
+
+
 const startButton = document.getElementById('startBtn') 
 const nextButton = document.getElementById('nextBtn') 
 startButton.addEventListener('click', startGame,)
 const quizContainer = document.getElementById('quiz-Container')
-const answerBtnEL = document.getElementById('choiceBtn')
+const choiceBtnEL = document.getElementById('choice-buttons')
 let randomQuestions, currentQuestionIndex; /// to shuffle the questions
 const questionEl = document.getElementById('question-container')//gets the question out of the array of questions
 
@@ -29,17 +29,17 @@ function startGame(){
 
 
 function displayNextQuestion(){
-    resetQuestion();
+   // resetQuestion();
     displayQuestion(randomQuestions[currentQuestionIndex])
 }
 function displayQuestion(questions) {
     questionEl.innerText = questions.question;
-    questions.choices.forEach(choices => {
+    question.choices.forEach(choice => {
         const button = document.createElement('button')
         button.innerText = choices.text
         button.classList.add('choiceBtn')
-        if(choices.answer){
-            button.dataset.answer = choices.answer
+        if(choice.correct){
+            button.dataset.correct = choice.correct
         }
         button.addEventListener('click', selectChoice)
         answerBtnEL.appendChild(button)
@@ -51,9 +51,9 @@ function resetQuestion(){
         answerBtnEL.removeChild
     }
 }
-//function selectChoice(e){
+function selectChoice(event){
 
-//}
+}
 
 
 //--------------------------------------------------------------------------------------------------------------------------------
@@ -62,76 +62,93 @@ const questions = [
     {
         question: "what is javaScript?",
         choices: [
-             "Placehasdfaolder danswer",
-             "Placeholasdfasdfasder dsaanswer",
-             "Placeholderadsfasdf answer",
-             "Placeholadsfasdfder answer"
-        ],
-        answer: 0 /// the correct answer
+             {text:'Placehasdfaolder danswer', correct: true},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+        ]
     }, {
-        question: "placeholder question?",
+        question: "what is javaScript?",
         choices: [
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer"
-        ],
-        answer: 0 /// the correct answer
+             {text:'Placehasdfaolder danswer', correct: true},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+        ]
     }, {
-        question: "placeholder question?",
+        question: "what is javaScript?",
         choices: [
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer"
-        ],
-        answer: 0 /// the correct answer
+             {text:'Placehasdfaolder danswer', correct: true},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+        ]
     }, {
-        question: "placeholder question?",
+        question: "what is javaScript?",
         choices: [
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer"
-        ],
-        answer: 0 /// the correct answer
+             {text:'Placehasdfaolder danswer', correct: true},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+        ]
     }, {
-        question: "placeholder question?",
+        question: "what is javaScript?",
         choices: [
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer"
-        ],
-        answer: 0 /// the correct answer
+             {text:'Placehasdfaolder danswer', correct: true},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+        ]
     }, {
-        question: "placeholder question?",
+        question: "what is javaScript?",
         choices: [
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer"
-        ],
-        answer: 0 /// the correct answer
+             {text:'Placehasdfaolder danswer', correct: true},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+        ]
     }, {
-        question: "placeholder question?",
+        question: "what is javaScript?",
         choices: [
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer"
-        ],
-        answer: 0 /// the correct answer
+             {text:'Placehasdfaolder danswer', correct: true},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+        ]
     }, {
-        question: "placeholder question?",
+        question: "what is javaScript?",
         choices: [
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer",
-            "Placeholder answer"
-        ],
-        answer: 0 /// the correct answer
-    },]
+             {text:'Placehasdfaolder danswer', correct: true},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+        ]
+    }, {
+        question: "what is javaScript?",
+        choices: [
+             {text:'Placehasdfaolder danswer', correct: true},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+        ]
+    }, {
+        question: "what is javaScript?",
+        choices: [
+             {text:'Placehasdfaolder danswer', correct: true},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+        ]
+    }, {
+        question: "what is javaScript?",
+        choices: [
+             {text:'Placehasdfaolder danswer', correct: true},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+             {text:'Placehasdfaolder danswer', correct: false},
+        ]
+    },
+]
 
 
      

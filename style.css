@@ -8,7 +8,7 @@ body {
 }
 .grid{
     width: 550px;
-    height: 500px;
+    height: 540px;
     margin: 0 auto;
     background-color: rgb(207, 87, 50);
     padding: 10px 50px 50px 50px;
@@ -32,11 +32,11 @@ body {
     color: #5a6772
 
 }
-#buttons{
-    margin-top: 40px;
+#choice-buttons{
+    margin-top: 10px;
 }
 #startbtn{
-    margin: 50px 2px 2px ;
+    margin: 30px 2px 2px ;
     font-size: 10px;
     font-weight: bold;
     padding: 10px 20px;
@@ -50,7 +50,7 @@ body {
     display: none;
 }
 
-#btn{  
+.btn{  
     background-color: rgba(247, 186, 108, 0.712);
     border-radius: 50px;
     margin: 40px 10px 0px;
@@ -61,11 +61,11 @@ body {
     border: 1px solid #343434;
 
 }
-#btn:hover{
+.btn:hover{
     cursor: pointer;
     background-color: #920808;
 }
-#btn:focus{
+.btn:focus{
     outline: 0;
 }
 #progress {
