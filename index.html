@@ -15,33 +15,34 @@
 
     <div class="grid">
         <!--below is the the grid for the questions-->
-        
 
-        <div class="quiz">
+
+        <div id="quiz-Container" class="hide">
             <!--the quiz container-->
             <h1>Yes its a quiz</h1>
             <hr style="margin-top: 20px;">
-
-            <p id="questionContainer">Hello</p>
-            <p id="timerNumber"></p>
-         
-            <button id="startbtn" onclick="timerEl.start()">Start counter</button>
-            <div class="buttons">
-                <button id="btn0">hello<span id="choice0"></span></button>
-                <button id="btn1">hello<span id="choice1"></span></button>
-                <button id="btn2">hello<span id="choice2"></span></button>
-                <button id="btn3">hello<span id="choice3"></span></button>
-            </div>
+            <div id="timerNumber"></div>
+            
+                <div id="question"> Questions</div>
+                <div id="buttons">
+                    <button id="btn0">hello<span class="choiceBtn"></span></button>
+                    <button id="btn1">hello<span class="choiceBtn"></span></button>
+                    <button id="btn2">hello<span class="choiceBtn"></span></button>
+                    <button id="btn3">hello<span class="choiceBtn"></span></button>
+                </div>
+            
             <hr style="margin-top: 40px;">
             <footer>
                 <p id="progress">question of x of y</p>
             </footer>
         </div>
+        <div class="control">
+            <button id="startBtn" class="startButton btn">Start </button>
+        </div>
 
 
     </div>
-    <script src="quiz_controller.js"></script>
-    <script src="question.js"></script>
+
     <script src="app.js"></script>
 
 </body>

@@ -36,11 +36,20 @@ body {
     margin-top: 40px;
 }
 #startbtn{
-    margin: 30px 2px 2px ;
+    margin: 50px 2px 2px ;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 10px 20px;
 }
-#timerNumber{
-    color: white;
+.control{
+    display: flex;
+    justify-content: center ;
+    align-items: center ;
 }
+.hide{
+    display: none;
+}
+
 #btn0, #btn1, #btn2, #btn3{  
     background-color: rgba(247, 186, 108, 0.712);
     border-radius: 50px;
@@ -62,32 +71,4 @@ body {
 #progress {
     color: #4CAF50;
     font-size: 18px;
-}
-/* the hidden quiz*/
-.grid #quiz{
-    visibility: hidden;
-    width: 550px;
-    height: 500px;
-    margin: 0 auto;
-    background-color: rgb(207, 87, 50);
-    padding: 10px 50px 50px 50px;
-    border-radius: 50px;
-    border: 2px solid #920808;
-    box-shadow: 10px 15px 5px bisque;
-}
-.grid h1 {
-    font-family: 'Times New Roman', Times, serif;
-    background-color: burlywood;
-    font-size: 60px;
-    text-align: center;
-    color: #242324;
-    padding: 2px 0px;
-    border-radius: 50px;
-}
-
-.grid #question {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 30px;
-    color: #5a6772
-
 }

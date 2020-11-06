@@ -1,35 +1,70 @@
 ///GLOBAL VARS
 var timerEl = document.getElementById('timer');//timer element
 var contentEl = document.getElementById('content');
+const startButton = document.getElementById('startBtn') 
+startButton.addEventListener('click', startGame,)
+const quizContainer = document.getElementById('quiz-Container')
+const answerBtnEL = document.getElementById('choiceBtn')
+let randomQuestions, currentQuestionIndex;
+const questionEl = document.getElementById('question')
+
+
 
 //--------------------------------------------------------------------------------------------------------------
 //
 //-----------------------------------------------------------------------------------------------------------------------------
 //The Timer and quiz start functions!!!
 
-var timerEl = (function (document) {
-    var myTimer;
-    function start() {
-        myTimer = setInterval(myClock, 1000);
-        var c = 60;
+function startGame(){
+    startButton.classList.add('hide');
+    quizContainer.classList.remove("hide");
 
-        function myClock() {
-            document.getElementById("timerNumber").innerHTML = --c;
-            if (c == 0) {
-                clearInterval(myTimer);
-                alert("Reached zero");
-            }
-        }
-    }
-    function end() {
-        clearInterval(myTimer)
-    }
-    return { start: start, end: end };
-})(document);
+    currentQuestionIndex = 0;
+    randomQuestions = questions.sort(() => Math.random() - .5);
+    
+    displayQuestion();
+}
+function displayNextQuestion(){
+    showQuestion(randomQuestions[currentQuestionIndex])
+}
+function displayQuestion(question) {
+    questionEl.innerText = question.question
+}
+
+//function displayNextQuestion(question){
+//    var currentQuestion = randomQuestions[currentQuestionIndex];
+//    currentQuestion.answer;
+//     const questions = document.appendChild("buttons")
+//
+//
+//    /// below is to display the choices
+//    for( var i = 0; i <currentQuestion.choices.length; i++){
+//        var choices = document.appendChild("span") 
+//        choices.setAttribute("id", i);
+//    }
+////var timerEl = (function (document) {
+////    var myTimer;
+//    function startClock() {
+//        myTimer = setInterval(myClock, 1000);
+//        var c = 60;
+//
+//        function myClock() {
+//            document.getElementById("timerNumber").innerHTML = --c;
+//            if (c == 0) {
+//                clearInterval(myTimer);
+//                alert("Reached zero");
+//            }
+//        }
+//    }
+//    function end() {
+//        clearInterval(myTimer)
+//    }
+//    return { start: start, end: end };
+//})(document);
 
 //--------------------------------------------------------------------------------------------------------------------------------
 
-var questions = [
+const questionS = [
     {
         question: "placeholder question?",
         choices: [
@@ -38,7 +73,7 @@ var questions = [
              "Placeholder answer",
              "Placeholder answer"
         ],
-        answerIndex: 0 /// the correct answer
+        answer: 0 /// the correct answer
     }, {
         question: "placeholder question?",
         choices: [
@@ -47,7 +82,7 @@ var questions = [
             "Placeholder answer",
             "Placeholder answer"
         ],
-        answerIndex: 0 /// the correct answer
+        answer: 0 /// the correct answer
     }, {
         question: "placeholder question?",
         choices: [
@@ -56,7 +91,7 @@ var questions = [
             "Placeholder answer",
             "Placeholder answer"
         ],
-        answerIndex: 0 /// the correct answer
+        answer: 0 /// the correct answer
     }, {
         question: "placeholder question?",
         choices: [
@@ -65,7 +100,7 @@ var questions = [
             "Placeholder answer",
             "Placeholder answer"
         ],
-        answerIndex: 0 /// the correct answer
+        answer: 0 /// the correct answer
     }, {
         question: "placeholder question?",
         choices: [
@@ -74,7 +109,7 @@ var questions = [
             "Placeholder answer",
             "Placeholder answer"
         ],
-        answerIndex: 0 /// the correct answer
+        answer: 0 /// the correct answer
     }, {
         question: "placeholder question?",
         choices: [
@@ -83,7 +118,7 @@ var questions = [
             "Placeholder answer",
             "Placeholder answer"
         ],
-        answerIndex: 0 /// the correct answer
+        answer: 0 /// the correct answer
     }, {
         question: "placeholder question?",
         choices: [
@@ -92,7 +127,7 @@ var questions = [
             "Placeholder answer",
             "Placeholder answer"
         ],
-        answerIndex: 0 /// the correct answer
+        answer: 0 /// the correct answer
     }, {
         question: "placeholder question?",
         choices: [
@@ -101,40 +136,30 @@ var questions = [
             "Placeholder answer",
             "Placeholder answer"
         ],
-        answerIndex: 0 /// the correct answer
+        answer: 0 /// the correct answer
     },]
 
 
 
-    document.body.qustionContainer = displayQuestion;
+     
 
-    function correctOrNot() {
-        currentQuestionIndex++;
-        displayQuestion();
-        //determine correct/incorrect
-    }
+  //  function correctOrNot() {
+  //      currentQuestionIndex++;
+  //      displayQuestion();
+  //      //determine correct/incorrect
+  //  }
 
 
-    var currentQuestionIndex = 0;
+   
     
 
-    function displayQuestion(){
-        var currentQuestion = questions[currentQuestionIndex];
-        currentQuestion.answerIndex;
-         const questions = document.appendChild("buttons")
-
-
-        /// below is to display the choices
-        for( var i = 0; i <currentQuestion.choices.length; i++){
-            var choices = document.appendChild("span") 
-            choices.setAttribute("id", i);
-        }
+    
         //display the question
         //display the choices
         
-    }
+    
 
- choices.addEventListener("click",answerChosen);
+ //choices.addEventListener("click",answerChosen);
 
 
 //-------------------------------------
