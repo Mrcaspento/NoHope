@@ -19,7 +19,7 @@ startButton.addEventListener('click', startGame, startTimer)
 var time = setInterval(startTimer, 1000);
 var score = "";
 var seconds = 60;
-var scoreArrg = JSON.parse(localStorage.getItem("highscores")) || []
+var scoreArray = JSON.parse(localStorage.getItem("highscores")) || []
 
 //start timer
 
@@ -36,20 +36,7 @@ function startGame() {
     //startTimer();
     displayNextQuestion();
 }
-questionContainer.addEventListener('click',function(eventT)){
-    eventT.preventDefault();
-    if(eventT.target.matches('button)'))
-    var userAnswer = eventT.target.getAttribute('id')
-    if(userAnswer != questions[currentQuestionIndex -1].correct){
-        secondsLeft -= 10
-    }
-    if(currentQuestionIndex === questions.length) {
-        score = secondsLeft
-        localStorage.setItem('highscores',JSON.stringify(score))
-        location.href-"highscores.html"
-    }
 
-}
 function startTimer(seconds) {
     timerEl = seconds + "seconds left";
     seconds--;
@@ -57,8 +44,25 @@ function startTimer(seconds) {
         clearInterval(time);
         alert("NO SOUP FOR YOU!");
     }
+    questionContainer.addEventListener('click',function(eventT) {
+        eventT.preventDefault();
+        if(eventT.target.matches('button)'))
+        var userAnswer = eventT.target.getAttribute('id')
+        
+        
+    });
 }
 
+function minusScore(){
+    if(correct != questions[currentQuestionIndex -1].correct){
+        secondsLeft -= 10
+    }
+    if(currentQuestionIndex === questions.length) {
+        score = secondsLeft
+        localStorage.setItem('highscores',JSON.stringify(score))
+        location.href-"highscores.html"
+    }
+}
 //-----------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------
 function displayNextQuestion() {
@@ -88,7 +92,7 @@ function resetQuestion() {
 function selectChoice(e) {
     const selectButton = e.target
     const correct = selectButton.dataset.correct
-    setStat(document.body, correct)
+    setStat(document.body.myTimer, correct)
     Array.from(choiceBtnEL.children).forEach(button => {
         setStat(button, button.dataset.correct)
     })
@@ -101,9 +105,8 @@ function selectChoice(e) {
 }
 function setStat(element, correct) {
     clearStat(element)
-    if (correct) {
+    if (correct){
         element.classList.add('correct')
-
     } else {
         element.classList.add('wrong')
     }
@@ -137,17 +140,17 @@ const questions = [
         question: "what does ceil() method do?",
         choices: [
             { text: 'rounds a number upwards to the nearest interger', correct: true },
-            { text: '', correct: false },
+            { text: 'red', correct: false },
             { text: 'nothing', correct: false },
-            { text: '', correct: false }
+            { text: 'lead', correct: false }
         ]
     }, {
-        question: "what is javaScript?",
+        question: "Have I gaven up on making questions because it didnt have much time to think of them or answers?",
         choices: [
             { text: 'this ', correct: true },
             { text: 'drugs', correct: false },
-            { text: '', correct: false },
-            { text: '', correct: false }
+            { text: 'green', correct: false },
+            { text: 'zero', correct: false }
         ]
     }, {
         question: "do you hate Tom Cruise",
@@ -155,39 +158,39 @@ const questions = [
             { text: 'katie holmes does ', correct: true },
             { text: 'Pizza', correct: false },
             { text: 'orangutan', correct: false },
-            { text: '', correct: false }
+            { text: 'tortuga', correct: false }
         ]
     }, {
-        question: "what is javaScript?",
+        question: "Do you like making mee?",
         choices: [
-            { text: '', correct: true },
-            { text: '', correct: false },
-            { text: '', correct: false },
-            { text: '', correct: false }
+            { text: 'its hard', correct: true },
+            { text: 'easy', correct: false },
+            { text: 'easy', correct: false },
+            { text: 'peasy', correct: false }
         ]
     }, {
-        question: "what is javaScript?",
+        question: "are dogs the best animal in the world?",
         choices: [
-            { text: '', correct: true },
-            { text: '', correct: false },
-            { text: '', correct: false },
-            { text: '', correct: false }
+            { text: 'beer', correct: true },
+            { text: 'yes', correct: false },
+            { text: 'no', correct: false },
+            { text: 'maybe', correct: false }
         ]
     }, {
-        question: "what is javaScript?",
+        question: "whos the tallest man",
         choices: [
-            { text: '', correct: true },
-            { text: '', correct: false },
-            { text: '', correct: false },
-            { text: '', correct: false }
+            { text: 'giraffe', correct: true },
+            { text: 'a arrow to the knee', correct: false },
+            { text: 'ben stiller', correct: false },
+            { text: 'pizza again', correct: false }
         ]
     }, {
-        question: "what is javaScript?",
+        question: "whats the biggest problem with nicolas?",
         choices: [
-            { text: '', correct: true },
-            { text: '', correct: false },
-            { text: '', correct: false },
-            { text: '', correct: false }
+            { text: 'keeps biting feet', correct: true },
+            { text: 'beats up little kids', correct: false },
+            { text: ' doesnt beat up enough little kids', correct: false },
+            { text: 'lives with his mom at age 45', correct: false }
         ]
     }
 ]
