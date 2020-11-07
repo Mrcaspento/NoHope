@@ -50,6 +50,7 @@ function displayQuestion(questions) {
     })
 }
 function resetQuestion() {
+    clearStat(document.body)
     nextButton.classList.add('hide')
     while (choiceBtnEL.firstChild) {
         choiceBtnEL.removeChild(choiceBtnEL.firstChild)
@@ -62,7 +63,12 @@ function selectChoice(e) {
     Array.from(choiceBtnEL.children).forEach(button =>{
         setStat(button, button.dataset.correct)
     })
+    if(randomQuestions.length > currentQuestionIndex + 1){
     nextButton.classList.remove('hide')
+    }else{
+        startButton.innerText = 'restart'
+        startButton.classList.remove('hide')
+    }
 }
 function setStat(element, correct){
     clearStat(element)
@@ -82,10 +88,34 @@ function clearStat(element){
 //Question array with choices and correct answer
 const questions = [
     {
-        question: "what is javaScript?",
+        question: "What is the identity operator for not equal?",
+        choices: [
+            { text: 'prompt("Text Here")', correct: false },
+            { text: '!==', correct: true },
+            { text: 'Placehasdfaolder danswer', correct: false },
+            { text: 'Placehasdfaolder danswer', correct: false }
+        ]
+    }, {
+        question: "How do you assign a default value to a prompt??",
         choices: [
             { text: 'Placehasdfaolder danswer', correct: true },
+            { text: 'its a quiz', correct: false },
             { text: 'Placehasdfaolder danswer', correct: false },
+            { text: 'Placehasdfaolder danswer', correct: false }
+        ]
+    }, {
+        question: "what does ceil() method do?",
+        choices: [
+            { text: 'rounds a number upwards to the nearest interger', correct: true },
+            { text: 'Placehasdfaolder danswer', correct: false },
+            { text: 'nothing', correct: false },
+            { text: 'Placehasdfaolder danswer', correct: false }
+        ]
+    }, {
+        question: "what is javaScript?",
+        choices: [
+            { text: 'this ', correct: true },
+            { text: 'drugs', correct: false },
             { text: 'Placehasdfaolder danswer', correct: false },
             { text: 'Placehasdfaolder danswer', correct: false }
         ]
@@ -129,47 +159,7 @@ const questions = [
             { text: 'Placehasdfaolder danswer', correct: false },
             { text: 'Placehasdfaolder danswer', correct: false }
         ]
-    }, {
-        question: "what is javaScript?",
-        choices: [
-            { text: 'Placehasdfaolder danswer', correct: true },
-            { text: 'Placehasdfaolder danswer', correct: false },
-            { text: 'Placehasdfaolder danswer', correct: false },
-            { text: 'Placehasdfaolder danswer', correct: false }
-        ]
-    }, {
-        question: "what is javaScript?",
-        choices: [
-            { text: 'Placehasdfaolder danswer', correct: true },
-            { text: 'Placehasdfaolder danswer', correct: false },
-            { text: 'Placehasdfaolder danswer', correct: false },
-            { text: 'Placehasdfaolder danswer', correct: false }
-        ]
-    }, {
-        question: "what is javaScript?",
-        choices: [
-            { text: 'Placehasdfaolder danswer', correct: true },
-            { text: 'Placehasdfaolder danswer', correct: false },
-            { text: 'Placehasdfaolder danswer', correct: false },
-            { text: 'Placehasdfaolder danswer', correct: false }
-        ]
-    }, {
-        question: "what is javaScript?",
-        choices: [
-            { text: 'Placehasdfaolder danswer', correct: true },
-            { text: 'Placehasdfaolder danswer', correct: false },
-            { text: 'Placehasdfaolder danswer', correct: false },
-            { text: 'Placehasdfaolder danswer', correct: false }
-        ]
-    }, {
-        question: "what is javaScript?",
-        choices: [
-            { text: 'Placehasdfaolder danswer', correct: true },
-            { text: 'Placehasdfaolder danswer', correct: false },
-            { text: 'Placehasdfaolder danswer', correct: false },
-            { text: 'Placehasdfaolder danswer', correct: false }
-        ]
-    },
+    }
 ]
 
 
