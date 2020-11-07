@@ -3,7 +3,7 @@
 
 const startButton = document.getElementById('startBtn')
 const nextButton = document.getElementById('nextBtn')
-startButton.addEventListener('click', startGame,)
+const highScorebtn = document.getElementById('scorebtn')
 const quizContainer = document.getElementById('quiz-Container')
 const choiceBtnEL = document.getElementById('choice-buttons')
 let randomQuestions, currentQuestionIndex; /// to shuffle the questions
@@ -13,12 +13,12 @@ let highScore = document.getElementById('highscore')
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
     displayNextQuestion();
-})
+});
 startButton.addEventListener('click', startGame, startTimer)
 ////--------------------------------------------------------------------------------------------------------------
 var time = setInterval(startTimer, 1000);
 var score = "";
-var seconds = 60;
+
 var scoreArray = JSON.parse(localStorage.getItem("highscores")) || []
 
 //start timer
@@ -29,46 +29,42 @@ var scoreArray = JSON.parse(localStorage.getItem("highscores")) || []
 //The Timer and quiz start functions!!!
 
 function startGame() {
+    highScorebtn.classList.add('hide')
     startButton.classList.add('hide');
     quizContainer.classList.remove("hide");
-    randomQuestions = questions.sort(() => Math.random() - .5);// makes sure i get a random question out of questions
+    randomQuestions = questions.sort(() => Math.random() - .5);// makes sure i get a 
     currentQuestionIndex = 0;
-    //startTimer();
     displayNextQuestion();
 }
+//function timer() {
+//    var seconds = 60;
+//    var timer = setInterval(function () {
+//        document.getElementById('secondsLeft')= '00:' + seconds;
+//        seconds--;
+//        if (seconds < 0) {
+//            clearInterval(timer);
+//        }
+//
+//    }, 1000);
+//}
 
-function startTimer(seconds) {
-    timerEl = seconds + "seconds left";
-    seconds--;
-    if (seconds == -1) {
-        clearInterval(time);
-        alert("NO SOUP FOR YOU!");
-    }
-    questionContainer.addEventListener('click',function(eventT) {
-        eventT.preventDefault();
-        if(eventT.target.matches('button)'))
-        var userAnswer = eventT.target.getAttribute('id')
-        
-        
-    });
-}
+function startTimer(){
+    timer();
+} 
 
-function minusScore(){
-    if(correct != questions[currentQuestionIndex -1].correct){
+function minusScore() {
+    if (correct != questions[currentQuestionIndex - 1].correct) {
         secondsLeft -= 10
     }
-    if(currentQuestionIndex === questions.length) {
+    if (currentQuestionIndex === questions.length) {
         score = secondsLeft
-        localStorage.setItem('highscores',JSON.stringify(score))
-        location.href-"highscores.html"
+        localStorage.setItem('highscores', JSON.stringify(score))
+        location.href - "highscores.html"
     }
 }
 //-----------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------
-function displayNextQuestion() {
-    resetQuestion()
-    displayQuestion(randomQuestions[currentQuestionIndex])
-}
+
 function displayQuestion(questions) {
     questionEl.innerText = questions.question;
     questions.choices.forEach(choice => {
@@ -82,17 +78,22 @@ function displayQuestion(questions) {
         choiceBtnEL.appendChild(button)
     })
 }
+function displayNextQuestion() {
+    resetQuestion()
+    displayQuestion(randomQuestions[currentQuestionIndex])
+}
 function resetQuestion() {
     clearStat(document.body)
     nextButton.classList.add('hide')
     while (choiceBtnEL.firstChild) {
-        choiceBtnEL.removeChild(choiceBtnEL.firstChild)
+        choiceBtnEL.removeChild
+            (choiceBtnEL.firstChild)
     }
 }
 function selectChoice(e) {
     const selectButton = e.target
     const correct = selectButton.dataset.correct
-    setStat(document.body.myTimer, correct)
+    setStat(document.body, correct)
     Array.from(choiceBtnEL.children).forEach(button => {
         setStat(button, button.dataset.correct)
     })
@@ -101,13 +102,15 @@ function selectChoice(e) {
     } else {
         startButton.innerText = 'restart'
         startButton.classList.remove('hide')
+        highScorebtn.classList.remove('hide')
     }
 }
 function setStat(element, correct) {
     clearStat(element)
-    if (correct){
+    if (correct) {
         element.classList.add('correct')
-    } else {
+    }
+    else {
         element.classList.add('wrong')
     }
 }

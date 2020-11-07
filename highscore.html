@@ -9,22 +9,27 @@
 </head>
 
 <body>
-    <div class="timer">Time:</div>
-    <div class="score">Score:</div>
-   
+
+
     <div class="grid">
         <!--below is the the grid for the questions-->
         <div class="highscore">HighScore:</div>
 
-        <div id="quiz-Container" >
-            <!--the quiz container-->
-            
-                
-        </div>
-    </div>
+        <div id="quiz-Container">
+            <div id="fin" class="flex-center flex-column">hello
+                <h1 id="FinalScore">0</h1>
+                <form>
+                    <input type="text" id="username" placeholder="username" />
 
-    <script src="app.js"></script>
-    <script src="highscore.js"></script>
+                </form>
+                <button type="submit" class="btn" id="saveScore" onclick="saveHighScore(event)">Submit</button>
+
+                <a class="btn" href="index.html">Play Again</a>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+        <script src="highscore.js"></script>
 </body>
 
 </html>
