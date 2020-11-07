@@ -72,6 +72,7 @@ body {
     color: #4CAF50;
     font-size: 18px;
 }
-#timerNumber{
+.timer{
+    text-emphasis-color: white;
     color: white;
 }
